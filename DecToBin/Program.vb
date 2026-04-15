@@ -15,7 +15,9 @@ Module Program
         Dim strBinNum = ""
         Dim uTempVal = uNumber
         Do While (uTempVal > 0)
-            strBinNum = CInt(uTempVal Mod 2).ToString() + strBinNum
+            Dim nBinDigit = uTempVal Mod 2
+            Dim chBinDigit = Chr(nBinDigit + Asc("0"c))
+            strBinNum = chBinDigit + strBinNum
             uTempVal \= 2
         Loop
         If (strBinNum.Length = 0) Then
